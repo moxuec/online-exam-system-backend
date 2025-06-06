@@ -117,10 +117,24 @@ public class QuestionServiceImpl extends ServiceImpl<QuestionMapper, Question> i
         questionMapper.updateById(question);
         // 修改选项
         List<Option> options = questionFrom.getOptions();
+        // 获取当前最大的sort值
+        int maxSort = 0;
+        for (Option option : options) {
+            if (option.getSort() != null && option.getSort() > maxSort) {
+                maxSort = option.getSort();
+            }
+        }
+        
         for (Option option : options) {
             if (option.getIsDeleted() != null && option.getIsDeleted() == 1) {
                 // 如果选项被标记为删除，则执行逻辑删除
                 optionMapper.deleteById(option.getId());
+            } else if (option.getId() == null) {
+                // 如果是新增的选项（没有id），则执行插入操作
+                option.setQuId(question.getId());
+                // 设置新选项的sort值为当前最大值+1
+                option.setSort(++maxSort);
+                optionMapper.insert(option);
             } else {
                 // 否则更新选项
                 optionMapper.updateById(option);
