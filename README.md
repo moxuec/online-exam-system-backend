@@ -2,7 +2,11 @@
 
 #### 友情提示
 
-> 1. **配套前端项目**：[前端项目地址](https://github.com/Alanosy/online-exam-system-frontend)
+> 1. **项目体验地址**：[项目体验地址](http://exam.alan.org.cn)  
+>    1. 管理员账号:admin 密码:123456
+>    2. 教师账号:teacher 密码:123456
+>    3. 教师账号:student 密码:123456
+> 2. **配套前端项目**：[前端项目地址](https://github.com/Alanosy/online-exam-system-frontend)
 
 #### 介绍
 
@@ -23,6 +27,14 @@
 3. 数据库Sql文件在lib文件夹中
 
 ****
+
+#### 其他服务（有偿）
+
+博主提供代部署服务
+
+提供接单服务，价格从优
+
+提供讲解，或写文档服务
 
 #### 功能介绍
 
